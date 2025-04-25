@@ -1,8 +1,10 @@
 console.log("Hello from office.js");
-
 console.log(window.location.host);
+console.log(window.location.protocol);
 
-const ws = new WebSocket(`ws://${window.location.host}`);
+// Determine WebSocket protocol based on current protocol
+const wsProtocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+const ws = new WebSocket(`${wsProtocol}//${window.location.host}`);
 
 const messagesContainer = document.getElementById('messages');
 const messageInput = document.getElementById('messageInput');
