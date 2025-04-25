@@ -1,5 +1,7 @@
 console.log("Hello from office.js");
 
+console.log(window.location.host);
+
 const ws = new WebSocket(`ws://${window.location.host}`);
 
 const messagesContainer = document.getElementById('messages');
